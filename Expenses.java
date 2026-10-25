@@ -1,12 +1,12 @@
-class ExpenseTracker implements Runnable
+class ExpenseTracker extends Thread
 {
-    public void run()
+   \ public void run()
     {
         System.out.println("Smart Expense Tracker started");
-        System.out.println("User details are processed");
-        System.out.println("Expense category is checked");
-        System.out.println("Expense amount is recorded");
-        System.out.println("Expense report is updated");
+        System.out.println("User expense details checked");
+        System.out.println("Expense category processed");
+        System.out.println("Expense amount recorded");
+        System.out.println("Daily expense report updated");
     }
 }
 
@@ -17,9 +17,7 @@ class Expenses
         System.out.println("Welcome to Smart Expense Tracker");
 
         ExpenseTracker e = new ExpenseTracker();
-
-        Thread t = new Thread(e);
-        t.start();
+        e.start();
 
         System.out.println("Expense activities completed");
     }
